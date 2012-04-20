@@ -5,7 +5,7 @@ require.config({
         'underscore' : 'libs/require-underscore',
         'backbone'   : 'libs/require-backbone'
     },
-    packages : [ 'map', {
+    packages : [ 'default', {
 
     } ],
     catchError: true
