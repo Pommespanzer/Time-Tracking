@@ -1,0 +1,15 @@
+SetEnv APPLICATION_ENV development
+
+RewriteEngine On
+
+# Enable on development environment
+RewriteCond %{REQUEST_URI} ^/scripts/.*
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteRule ^.*$ - [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+RewriteRule ^.*$ index.php [NC,L]
